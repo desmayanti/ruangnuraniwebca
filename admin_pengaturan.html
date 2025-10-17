@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Akun Admin</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/admin_pengaturan.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">Ruang Nurani Admin</div>
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_pengaturan.html" class="nav-item active"><i class="fas fa-cog"></i> Pengaturan</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Pengaturan Akun & Sistem</h2>
+                <p>Kelola detail profil, keamanan, dan preferensi sistem admin.</p>
+            </header>
+
+            <section class="content-area">
+                <div class="form-setting-container">
+                    <h3><i class="fas fa-user-circle"></i> Pengaturan Profil Admin</h3>
+                    
+                    <form id="profileSettingsForm">
+                        
+                        <div class="input-group-setting">
+                            <label for="adminUsername"><i class="fas fa-user"></i> Username</label>
+                            <input type="text" id="adminUsername" value="admin_pemerintah" readonly>
+                            <small style="color: #666;">Username tidak bisa diubah.</small>
+                        </div>
+
+                        <div class="input-group-setting">
+                            <label for="namaLengkap"><i class="fas fa-signature"></i> Nama Lengkap</label>
+                            <input type="text" id="namaLengkap" value="Dian Pratama" required>
+                        </div>
+
+                        <div class="input-group-setting">
+                            <label for="adminEmail"><i class="fas fa-envelope"></i> Email Kontak</label>
+                            <input type="email" id="adminEmail" value="dian.pratama@pemda.go.id" required>
+                        </div>
+
+                        <div class="setting-buttons">
+                            <button type="submit" class="btn-save-settings"><i class="fas fa-save"></i> Simpan Perubahan</button>
+                            <button type="button" class="btn-reset-settings" onclick="document.getElementById('profileSettingsForm').reset()"><i class="fas fa-undo"></i> Reset</button>
+                        </div>
+                    </form>
+
+                    <div class="password-section">
+                        <h4><i class="fas fa-lock"></i> Keamanan Akun (Ganti Password)</h4>
+                        <form id="passwordChangeForm">
+                            <div class="input-group-setting">
+                                <label for="currentPassword"><i class="fas fa-key"></i> Password Lama</label>
+                                <input type="password" id="currentPassword" required>
+                            </div>
+                            <div class="input-group-setting">
+                                <label for="newPassword"><i class="fas fa-shield-alt"></i> Password Baru</label>
+                                <input type="password" id="newPassword" required>
+                            </div>
+                            <div class="input-group-setting">
+                                <label for="confirmNewPassword"><i class="fas fa-check-double"></i> Konfirmasi Password Baru</label>
+                                <input type="password" id="confirmNewPassword" required>
+                            </div>
+                            
+                            <div class="setting-buttons">
+                                <button type="submit" class="btn-save-settings"><i class="fas fa-sync-alt"></i> Ubah Password</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script>
+        document.getElementById('profileSettingsForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Pengaturan Profil berhasil disimpan!');
+            // Logika penyimpanan data akan ditaruh di sini (backend)
+        };
+        document.getElementById('passwordChangeForm').onsubmit = function(e) {
+            e.preventDefault();
+            const newPass = document.getElementById('newPassword').value;
+            const confirmPass = document.getElementById('confirmNewPassword').value;
+
+            if (newPass !== confirmPass) {
+                alert('Konfirmasi Password Baru tidak cocok!');
+                return;
+            }
+            alert('Password berhasil diubah!');
+            document.getElementById('passwordChangeForm').reset();
+            // Logika perubahan password ditaruh di sini
+        };
+    </script>
+</body>
+</html>

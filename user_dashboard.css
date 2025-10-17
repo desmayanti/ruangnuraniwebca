@@ -1,0 +1,130 @@
+/* css/user_dashboard.css */
+
+/* ======================== */
+/* STATISTIK RINGKAS USER */
+/* ======================== */
+
+.user-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Menggunakan stat-card yang sama dari admin_laporan.css tapi dengan warna berbeda */
+.user-stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--maroon); 
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.user-stat-card .stat-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 2.5em;
+    color: var(--maroon-dark);
+}
+
+.user-stat-card .stat-icon {
+    font-size: 2.5em;
+    color: var(--maroon);
+    opacity: 0.4;
+}
+
+
+/* ======================== */
+/* KELUHAN TERAKHIR & TIMELINE STATUS */
+/* ======================== */
+
+.recent-complaint-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.recent-complaint-section h3 {
+    border-bottom: 2px solid var(--bone-white-dark);
+    padding-bottom: 10px;
+    color: var(--maroon-dark);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.complaint-status-card {
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--bone-white);
+}
+
+/* Timeline Status Visual */
+.status-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 40px 0;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Garis Timeline */
+.status-timeline::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 3px;
+    background-color: #ddd;
+    top: 15px;
+    left: 5%;
+    z-index: 1;
+}
+
+.timeline-step {
+    width: 25%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-step i {
+    font-size: 1.2em;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #ccc;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 5px auto;
+    transition: all 0.3s;
+}
+
+/* Step yang Sudah Selesai/Dilalui */
+.timeline-step.done i {
+    border-color: #5cb85c;
+    background-color: #5cb85c;
+    color: white;
+}
+.timeline-step.done p {
+    color: #5cb85c;
+    font-weight: 600;
+}
+
+/* Step yang Sedang Berlangsung */
+.timeline-step.current i {
+    border-color: #f0ad4e;
+    background-color: white;
+    color: #f0ad4e;
+    box-shadow: 0 0 0 4px rgba(240, 173, 78, 0.4); 
+}
+.timeline-step.current p {
+    color: var(--maroon-dark);
+    font-weight: bold;
+}

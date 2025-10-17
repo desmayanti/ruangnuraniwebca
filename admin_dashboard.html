@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Ruang Nurani Rakyat</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/admin_laporan.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-user-secret logo-icon"></i> Admin <span style="color:var(--red-alert);"> Anti Korupsi</span>
+            </div> 
+            
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_keluhan.html" class="nav-item"><i class="fas fa-exclamation-triangle"></i> Keluhan Rakyat</a>
+                <a href="admin_solusi.html" class="nav-item"><i class="fas fa-lightbulb"></i> Solusi & Penanganan</a>
+                <a href="admin_mengatasi.html" class="nav-item"><i class="fas fa-cogs"></i> Cara Mengatasi</a>
+                <a href="admin_uneg_uneg.html" class="nav-item"><i class="fas fa-comments"></i> Isi Uneg-unegan</a>
+                <a href="admin_pengaturan.html" class="nav-item"><i class="fas fa-cog"></i> Pengaturan</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2 style="color:var(--maroon-dark);">Selamat Datang Kembali, Admin Jujur!</h2>
+                <p>Ringkasan kinerja dan keluhan yang perlu segera ditangani. Jaga integritas!</p>
+            </header>
+
+            <section class="content-area">
+                
+                <div class="stats-grid">
+                    
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Keluhan Baru</p>
+                        </div>
+                        <div class="stat-icon"><i class="fas fa-bell" style="color:var(--red-alert); opacity:0.3;"></i></div>
+                    </div>
+                    
+                    <div class="stat-card" style="border-left-color: var(--green-success);">
+                        <div class="stat-info">
+                            <h3>145</h3>
+                            <p>Keluhan Selesai Bulan Ini</p>
+                        </div>
+                        <div class="stat-icon" style="color: var(--green-success); opacity: 0.3;"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    
+                    <div class="stat-card" style="border-left-color: var(--orange-warning);">
+                        <div class="stat-info">
+                            <h3>28</h3>
+                            <p>Sedang Diproses</p>
+                        </div>
+                        <div class="stat-icon" style="color: var(--orange-warning); opacity: 0.3;"><i class="fas fa-hourglass-half"></i></div>
+                    </div>
+                    
+                    <div class="stat-card" style="border-left-color: var(--blue-info);">
+                        <div class="stat-info">
+                            <h3>98%</h3>
+                            <p>Tingkat Respon Cepat</p>
+                        </div>
+                        <div class="stat-icon" style="color: var(--blue-info); opacity: 0.3;"><i class="fas fa-percent"></i></div>
+                    </div>
+                    
+                </div>
+
+                <div class="report-section">
+                    <h3><i class="fas fa-exclamation-circle"></i> Keluhan Terbaru yang Menunggu Tindakan</h3>
+                    
+                    <ul class="new-report-list">
+                        <li class="report-item" onclick="alert('Membuka detail #K25-015')">
+                            <div class="report-item-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="report-content">
+                                <h4>Pungli di Kantor Kelurahan Cepat Saji</h4>
+                                <p>Dari: Bapak Asep | Kategori: Pelayanan Publik</p>
+                            </div>
+                            <span class="report-time">5 menit lalu</span>
+                        </li>
+
+                        <li class="report-item" onclick="alert('Membuka detail #K25-014')">
+                            <div class="report-item-icon"><i class="fas fa-road"></i></div>
+                            <div class="report-content">
+                                <h4>Jalan Ambles di Dekat Jembatan Utara</h4>
+                                <p>Dari: Ibu Rina | Kategori: Infrastruktur</p>
+                            </div>
+                            <span class="report-time">1 jam lalu</span>
+                        </li>
+                        
+                        <li class="report-item" onclick="alert('Membuka detail #K25-013')">
+                            <div class="report-item-icon"><i class="fas fa-trash-alt"></i></div>
+                            <div class="report-content">
+                                <h4>Penumpukan Sampah Liar di Pinggir Tol</h4>
+                                <p>Dari: Anonim | Kategori: Lingkungan</p>
+                            </div>
+                            <span class="report-time">3 jam lalu</span>
+                        </li>
+                        
+                    </ul>
+                    <a href="admin_keluhan.html" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        Lihat Semua Keluhan Baru <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="chart-area" style="margin-top: 30px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+                    <h3>Tren Keluhan Bulanan</h3>
+                    <p style="text-align: center; color: #aaa; padding: 50px 0;">[Placeholder untuk Grafik Bar atau Pie Chart]</p>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

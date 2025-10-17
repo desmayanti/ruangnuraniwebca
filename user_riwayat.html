@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Keluhan - Ruang Nurani User</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/user_dashboard.css">
+    <link rel="stylesheet" href="../css/admin_keluhan.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">Ruang Nurani User</div>
+            <nav class="nav-menu">
+                <a href="user_page.html" class="nav-item"><i class="fas fa-home"></i> Dashboard Saya</a>
+                <a href="user_keluhan_baru.html" class="nav-item"><i class="fas fa-plus-circle"></i> Laporkan Baru</a>
+                <a href="user_riwayat.html" class="nav-item active"><i class="fas fa-history"></i> Riwayat Keluhan</a>
+                <a href="user_pengaturan.html" class="nav-item"><i class="fas fa-cog"></i> Pengaturan Akun</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Riwayat Semua Keluhan Anda</h2>
+                <button class="btn btn-primary btn-small" onclick="window.location.href='user_keluhan_baru.html'"><i class="fas fa-plus"></i> Laporkan Lagi</button>
+            </header>
+
+            <section class="content-area">
+                <div class="complaint-list-container">
+                    <div class="filter-controls">
+                        <input type="text" id="searchKeluhan" placeholder="Cari Judul atau ID Keluhan...">
+                        <select id="filterStatus">
+                            <option value="all">Filter Status</option>
+                            <option value="new">Baru</option>
+                            <option value="progress">Diproses</option>
+                            <option value="done">Selesai</option>
+                        </select>
+                    </div>
+
+                    <table class="complaint-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Judul Keluhan</th>
+                                <th>Tanggal Kirim</th>
+                                <th>Kategori</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="riwayatTableBody">
+                            <tr>
+                                <td>#RN25-007</td>
+                                <td>Jalan Rusak Parah di Gang Mawar</td>
+                                <td>15/10/2025</td>
+                                <td>Infrastruktur</td>
+                                <td><span class="status-badge status-progress">Diproses</span></td>
+                                <td><a href="#" class="btn-detail" onclick="alert('Detail #RN25-007')">Detail</a></td>
+                            </tr>
+                             <tr>
+                                <td>#RN25-005</td>
+                                <td>Izin Usaha Lama Sekali</td>
+                                <td>01/10/2025</td>
+                                <td>Pelayanan</td>
+                                <td><span class="status-badge status-done">Selesai</span></td>
+                                <td><a href="#" class="btn-detail" onclick="alert('Detail #RN25-005')">Detail</a></td>
+                            </tr>
+                            <tr>
+                                <td>#RN25-004</td>
+                                <td>Tumpukan Sampah Liar</td>
+                                <td>28/09/2025</td>
+                                <td>Lingkungan</td>
+                                <td><span class="status-badge status-done">Selesai</span></td>
+                                <td><a href="#" class="btn-detail" onclick="alert('Detail #RN25-004')">Detail</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

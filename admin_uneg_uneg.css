@@ -1,0 +1,92 @@
+/* css/admin_uneg_uneg.css */
+
+/* ======================== */
+/* Gaya Khusus Halaman Uneg-uneg (Aspirasi) */
+/* ======================== */
+
+.guide-intro {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+    border-left: 3px solid var(--maroon);
+    padding-left: 15px;
+}
+
+.uneg-uneg-list {
+    /* Menggunakan Grid untuk tampilan card yang responsif dan terstruktur */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.uneg-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    /* Garis penanda branding Maroon di kiri */
+    border-left: 5px solid var(--maroon);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.uneg-card:hover {
+    /* Efek hover keren: card sedikit naik */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.uneg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--bone-white-dark);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.uneg-title {
+    color: var(--maroon-dark);
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.uneg-detail {
+    font-size: 0.95em;
+    color: #333;
+    flex-grow: 1; /* Memastikan konten mengisi ruang sebelum footer */
+    margin-bottom: 15px;
+}
+
+.uneg-meta {
+    font-size: 0.8em;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Mendorong meta ke bagian bawah card */
+    padding-top: 10px;
+    border-top: 1px dashed var(--bone-white-dark);
+}
+
+.uneg-meta i {
+    color: var(--maroon);
+    margin-right: 5px;
+}
+
+/* Tombol Edit */
+.uneg-actions .btn-edit {
+    background: var(--maroon);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.3s;
+}
+
+.uneg-actions .btn-edit:hover {
+    background: var(--maroon-dark);
+}

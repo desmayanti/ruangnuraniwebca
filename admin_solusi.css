@@ -1,0 +1,134 @@
+/* css/admin_solusi.css - KODE SOLUSI BERBASIS CARD YANG MENARIK (DIPERBAIKI) */
+
+/* ======================== */
+/* KONTROL FILTER SOLUSI */
+/* ======================== */
+.solusi-filter-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.solusi-filter-controls input[type="text"],
+.solusi-filter-controls select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    flex-grow: 1;
+    max-width: 350px;
+}
+
+/* ======================== */
+/* GRID SOLUSI (Card View) */
+/* ======================== */
+.solusi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 25px;
+}
+
+.solusi-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+    border-top: 6px solid var(--maroon); 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.solusi-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.solusi-card .kategori-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--maroon);
+    color: white;
+    padding: 8px 15px;
+    border-bottom-left-radius: 10px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.solusi-card h3 {
+    color: var(--maroon-dark);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    border-bottom: 1px dashed var(--bone-white-dark);
+    padding-bottom: 10px;
+}
+
+.solusi-card p {
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.solusi-card .pic-info {
+    font-size: 0.85em;
+    color: #888;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.solusi-card .pic-info i {
+    margin-right: 8px;
+    color: var(--blue-info); 
+}
+
+.solusi-card .solusi-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.solusi-actions .btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.solusi-actions .btn-edit { background-color: var(--blue-info); }
+.solusi-actions .btn-delete { background-color: var(--red-alert); }
+
+/* ======================== */
+/* PERBAIKAN GAYA INPUT MODAL SOLUSI */
+/* ======================== */
+.input-group-setting {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.input-group-setting label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--maroon-dark);
+}
+.input-group-setting input[type="text"], 
+.input-group-setting textarea, 
+.input-group-setting select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* PENTING: Untuk memastikan padding tidak merusak lebar 100% */
+}

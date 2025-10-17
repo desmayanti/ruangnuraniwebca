@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isi Uneg-unegan - Ruang Nurani Admin</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/admin_uneg_uneg.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">Ruang Nurani Admin</div>
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_keluhan.html" class="nav-item"><i class="fas fa-exclamation-triangle"></i> Keluhan Rakyat</a>
+                <a href="admin_solusi.html" class="nav-item"><i class="fas fa-lightbulb"></i> Solusi</a>
+                <a href="admin_mengatasi.html" class="nav-item"><i class="fas fa-cogs"></i> Cara Mengatasi</a>
+                <a href="admin_uneg_uneg.html" class="nav-item active"><i class="fas fa-comments"></i> Isi Uneg-unegan</a>
+                <a href="admin_pengaturan.html" class="nav-item"><i class="fas fa-cog"></i> Pengaturan</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Kelola Aspirasi & Uneg-uneg Publik</h2>
+                <button class="btn btn-primary btn-small" onclick="alert('Form tambah uneg-uneg baru muncul!')"><i class="fas fa-plus-circle"></i> Posting Uneg-uneg</button>
+            </header>
+
+            <section class="content-area">
+                <p class="guide-intro">Berikut adalah daftar pesan publik (kritik, saran, atau aspirasi) yang diunggah oleh pihak admin sebagai komunikasi dua arah.</p>
+                
+                <div class="uneg-uneg-list">
+                    
+                    <div class="uneg-card">
+                        <div class="uneg-header">
+                            <h4 class="uneg-title">Prioritas Perbaikan Fasilitas Publik</h4>
+                            <div class="uneg-actions">
+                                <button class="btn-edit" onclick="editUneg('Card 1')"><i class="fas fa-pen"></i> Edit</button>
+                            </div>
+                        </div>
+                        <p class="uneg-detail">
+                            "Pemerintah Daerah berkomitmen untuk memprioritaskan perbaikan tiga fasilitas publik utama tahun ini: Taman Kota, Pusat Kesehatan Masyarakat, dan Perpustakaan Daerah. Kami mendengarkan masukan Anda!"
+                        </p>
+                        <div class="uneg-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Diposting: 01 Okt 2025</span>
+                            <span><i class="fas fa-user-shield"></i> Oleh: Sekre. Humas</span>
+                        </div>
+                    </div>
+
+                    <div class="uneg-card">
+                        <div class="uneg-header">
+                            <h4 class="uneg-title">Himbauan Pelaporan Tepat Sasaran</h4>
+                            <div class="uneg-actions">
+                                <button class="btn-edit" onclick="editUneg('Card 2')"><i class="fas fa-pen"></i> Edit</button>
+                            </div>
+                        </div>
+                        <p class="uneg-detail">
+                            "Mohon warga memastikan keluhan disampaikan dengan bukti pendukung (foto/video) dan lokasi yang akurat untuk mempercepat proses penanganan oleh dinas terkait. Terima kasih atas partisipasi aktifnya."
+                        </p>
+                        <div class="uneg-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Diposting: 25 Sep 2025</span>
+                            <span><i class="fas fa-user-shield"></i> Oleh: Admin TI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="uneg-card">
+                        <div class="uneg-header">
+                            <h4 class="uneg-title">Apresiasi Kinerja Petugas Kebersihan</h4>
+                            <div class="uneg-actions">
+                                <button class="btn-edit" onclick="editUneg('Card 3')"><i class="fas fa-pen"></i> Edit</button>
+                            </div>
+                        </div>
+                        <p class="uneg-detail">
+                            "Kami mengucapkan terima kasih kepada seluruh petugas kebersihan yang telah bekerja keras menjaga keindahan kota. Partisipasi warga dalam membuang sampah pada tempatnya sangat diharapkan."
+                        </p>
+                        <div class="uneg-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Diposting: 15 Sep 2025</span>
+                            <span><i class="fas fa-user-shield"></i> Oleh: Dinas Kebersihan</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script>
+        // Fungsi sederhana untuk simulasi aksi edit
+        function editUneg(card) {
+            alert(`Anda akan mengedit konten pada: ${card}. Di sini akan muncul form pop-up editor.`);
+        }
+    </script>
+</body>
+</html>

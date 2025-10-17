@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluhan Rakyat - Admin Ruang Nurani</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/admin_keluhan.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">Ruang Nurani Admin</div>
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_keluhan.html" class="nav-item active"><i class="fas fa-exclamation-triangle"></i> Keluhan Rakyat</a>
+                <a href="admin_solusi.html" class="nav-item"><i class="fas fa-lightbulb"></i> Solusi</a>
+                <a href="admin_pengaturan.html" class="nav-item"><i class="fas fa-cog"></i> Pengaturan</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Manajemen Keluhan Rakyat</h2>
+                <p>Tinjau, verifikasi, dan tetapkan status untuk setiap keluhan yang masuk.</p>
+                <button class="btn btn-primary btn-small" onclick="alert('Membuka Form Laporan Baru (Simulasi)')"><i class="fas fa-plus"></i> Tambah Manual</button>
+            </header>
+
+            <section class="content-area">
+                <div class="complaint-list-container">
+                    
+                    <div class="filter-controls">
+                        <input type="text" id="searchKeluhan" placeholder="Cari Judul atau ID Keluhan..." onkeyup="filterTable()">
+                        <select id="filterStatus" onchange="filterTable()">
+                            <option value="all">Semua Status</option>
+                            <option value="Baru">Baru</option>
+                            <option value="Verifikasi">Verifikasi</option>
+                            <option value="Diproses">Diproses</option>
+                            <option value="Selesai">Selesai</option>
+                            <option value="Ditolak">Ditolak</option>
+                        </select>
+                        <select id="filterKategori" onchange="filterTable()">
+                            <option value="all">Semua Kategori</option>
+                            <option value="Infrastruktur">Infrastruktur</option>
+                            <option value="Pelayanan">Pelayanan</option>
+                            <option value="Lingkungan">Lingkungan</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="complaint-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Judul Keluhan</th>
+                                    <th>Pelapor</th>
+                                    <th>Kategori</th>
+                                    <th>Tanggal Masuk</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="complaintTableBody">
+                                </tbody>
+                        </table>
+                    </div>
+                    
+                    <div id="noResults" style="text-align: center; padding: 20px; color: #999; display: none;">
+                        <i class="fas fa-inbox fa-3x" style="margin-bottom: 10px;"></i>
+                        <p>Tidak ada keluhan yang cocok dengan filter Anda.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/admin_keluhan.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

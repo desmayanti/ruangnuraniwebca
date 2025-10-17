@@ -1,0 +1,143 @@
+/* css/login.css - KODE KHUSUS UNTUK INDEX.HTML (Halaman Login) */
+
+/* ======================== */
+/* BACKGROUND UTAMA HALAMAN LOGIN (MERAH MARUN DAN DI TENGAH) */
+/* ======================== */
+body {
+    /* PENTING: Menimpa gaya dari main.css */
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+    
+    /* PENTING: Memastikan konten diletakkan di tengah layar */
+    display: flex; 
+    justify-content: center; /* Horisontal tengah */
+    align-items: center; /* Vertikal tengah */
+    min-height: 100vh; /* Memastikan mengambil tinggi penuh viewport */
+    margin: 0;
+    width: 100%;
+}
+
+/* ======================== */
+/* KOTAK LOGIN (Container) */
+/* ======================== */
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    max-width: 400px; /* Batasi lebar agar fokus di tengah */
+    text-align: center;
+    /* PENTING: Pastikan z-index cukup tinggi jika ada elemen lain yang menimpa */
+    position: relative; 
+    z-index: 5;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.02);
+}
+
+/* ======================== */
+/* HEADER DAN LOGO TIKUS BERDASI */
+/* ======================== */
+.auth-header {
+    margin-bottom: 30px;
+}
+
+.auth-logo {
+    font-size: 2.5em;
+    color: var(--red-alert);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.auth-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--maroon-dark);
+    font-weight: 800;
+}
+
+.auth-header p {
+    color: #777;
+    margin-top: 5px;
+}
+
+/* ======================== */
+/* INPUT DAN FORM */
+/* ======================== */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 45px 15px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: var(--bone-white);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+.input-group .input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+}
+
+/* ======================== */
+/* TOMBOL LOGIN */
+/* ======================== */
+.login-container .btn-primary {
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-container .btn-primary:hover {
+    background-color: var(--maroon-dark);
+    transform: translateY(-2px);
+}
+
+.alt-action {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.alt-action a {
+    color: var(--maroon);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.alt-action a:hover {
+    color: var(--maroon-dark);
+    text-decoration: underline;
+}

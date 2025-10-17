@@ -1,0 +1,64 @@
+/* css/dashboard.css - KODE LAYOUT DASAR DAN STABIL */
+
+/* ======================== */
+/* LAYOUT UTAMA (Flexbox) */
+/* ======================== */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh; /* Memastikan dashboard mengisi seluruh tinggi layar */
+    width: 100%;
+}
+
+/* ======================== */
+/* SIDEBAR (NAVIGASI) */
+/* ======================== */
+.sidebar {
+    width: 250px;
+    background-color: var(--maroon);
+    color: white;
+    flex-shrink: 0; /* PENTING: Mencegah sidebar mengecil saat konten utama membesar */
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu {
+    padding: 10px 0;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-left: 5px solid transparent;
+}
+
+.nav-item i {
+    margin-right: 10px;
+}
+
+.nav-item:hover {
+    background-color: var(--maroon-dark);
+}
+
+.nav-item.active {
+    background-color: var(--maroon-dark);
+    border-left-color: var(--bone-white);
+    font-weight: 700;
+}
+
+/* ======================== */
+/* KONTEN UTAMA */
+/* ======================== */
+.main-content {
+    flex-grow: 1; /* Konten utama akan mengambil semua sisa ruang */
+    padding: 30px;
+    background-color: var(--bone-white);
+    overflow-y: auto; /* Memungkinkan scrolling di konten utama jika panjang */
+}
+
+.header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}

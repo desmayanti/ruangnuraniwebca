@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard User - Ruang Nurani</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/user_dashboard.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart logo-icon" style="color:#5bc0de;"></i> Ruang Nurani Warga
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="user_page.html" class="nav-item active"><i class="fas fa-home"></i> Dashboard Saya</a>
+                <a href="user_keluhan_baru.html" class="nav-item"><i class="fas fa-plus-circle"></i> Laporkan Baru</a>
+                <a href="user_riwayat.html" class="nav-item"><i class="fas fa-history"></i> Riwayat Keluhan</a>
+                <a href="user_pengaturan.html" class="nav-item"><i class="fas fa-cog"></i> Pengaturan Akun</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2 style="color:var(--maroon-dark);">Halo, Warga Peduli!</h2>
+                <p>Semua keluhan Anda adalah langkah nyata menuju perubahan.</p>
+            </header>
+
+            <section class="content-area">
+                
+                <div class="user-stats-grid">
+                    <div class="user-stat-card" style="border-left-color: #5bc0de;">
+                        <div class="stat-info">
+                            <h3>7</h3>
+                            <p>Total Laporan Anda</p>
+                        </div>
+                        <div class="stat-icon" style="color: #5bc0de; opacity: 0.4;"><i class="fas fa-clipboard-list"></i></div>
+                    </div>
+                    
+                    <div class="user-stat-card" style="border-left-color: #5cb85c;">
+                        <div class="stat-info">
+                            <h3>4</h3>
+                            <p>Laporan Selesai Ditangani</p>
+                        </div>
+                        <div class="stat-icon" style="color: #5cb85c; opacity: 0.4;"><i class="fas fa-check-double"></i></div>
+                    </div>
+
+                    <div class="user-stat-card">
+                        <div class="stat-info">
+                            <h3>2</h3>
+                            <p>Menunggu Verifikasi</p>
+                        </div>
+                        <div class="stat-icon"><i class="fas fa-hourglass-start"></i></div>
+                    </div>
+                </div>
+
+                <div class="recent-complaint-section" style="margin-top: 30px;">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Status Keluhan Terbaru Anda</h3>
+                    
+                    <div class="complaint-status-card">
+                        <div class="status-header">
+                            <h4>Pungli di Kantor Kelurahan Cepat Saji</h4>
+                            <span class="icon-header"><i class="fas fa-paper-plane"></i></span>
+                        </div>
+                        <div class="complaint-meta">ID: #RN25-015 | Kategori: Pelayanan Publik | Terakhir Update: 5 menit lalu</div>
+                        
+                        <div class="status-timeline">
+                            <div class="timeline-step done">
+                                <i class="fas fa-edit"></i>
+                                <p>Dilaporkan</p>
+                            </div>
+                            <div class="timeline-step done">
+                                <i class="fas fa-search"></i>
+                                <p>Diverifikasi Admin</p>
+                            </div>
+                            <div class="timeline-step current">
+                                <i class="fas fa-hammer"></i>
+                                <p>Sedang Diproses</p>
+                            </div>
+                            <div class="timeline-step">
+                                <i class="fas fa-check"></i>
+                                <p>Selesai</p>
+                            </div>
+                        </div>
+                        
+                        <a href="user_riwayat.html" class="btn btn-primary btn-small" style="background-color: #5bc0de;">
+                            Lihat Detail Laporan <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>

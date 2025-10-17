@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporkan Keluhan Baru</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/admin_pengaturan.css"> <link rel="stylesheet" href="../css/form_notification.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">Ruang Nurani User</div>
+            <nav class="nav-menu">
+                <a href="user_page.html" class="nav-item"><i class="fas fa-home"></i> Dashboard Saya</a>
+                <a href="user_keluhan_baru.html" class="nav-item active"><i class="fas fa-plus-circle"></i> Laporkan Baru</a>
+                <a href="user_riwayat.html" class="nav-item"><i class="fas fa-history"></i> Riwayat Keluhan</a>
+                <a href="user_pengaturan.html" class="nav-item"><i class="fas fa-cog"></i> Pengaturan Akun</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Formulir Pengajuan Keluhan Baru</h2>
+                <p>Isi formulir ini dengan detail keluhan Anda yang valid dan akurat.</p>
+            </header>
+
+            <section class="content-area">
+                <div class="form-keluhan-container">
+                    <form id="formKeluhanBaru" onsubmit="submitKeluhan(event)">
+                        
+                        <div class="input-group-setting">
+                            <label for="judul"><i class="fas fa-heading"></i> Judul Keluhan</label>
+                            <input type="text" id="judul" placeholder="Contoh: Jalan berlubang di dekat pasar" required>
+                        </div>
+
+                        <div class="input-group-setting">
+                            <label for="deskripsi"><i class="fas fa-comment-alt"></i> Detail Keluhan</label>
+                            <textarea id="deskripsi" rows="6" placeholder="Jelaskan secara rinci apa yang terjadi, mengapa ini menjadi masalah, dan kapan Anda menemukannya." required></textarea>
+                        </div>
+                        
+                        <div class="input-group-setting">
+                            <label for="lokasi"><i class="fas fa-map-marker-alt"></i> Lokasi/Alamat Lengkap Kejadian</label>
+                            <input type="text" id="lokasi" placeholder="Contoh: Jalan Merdeka No. 5, Kel. Sukamaju" required>
+                        </div>
+
+                        <div class="input-group-setting">
+                            <label for="kategori"><i class="fas fa-tags"></i> Kategori Keluhan</label>
+                            <select id="kategori" required>
+                                <option value="" disabled selected>Pilih Kategori</option>
+                                <option value="infrastruktur">Infrastruktur (Jalan, Jembatan)</option>
+                                <option value="pelayanan">Pelayanan Publik (Birokrasi)</option>
+                                <option value="lingkungan">Lingkungan (Sampah, Banjir)</option>
+                                <option value="sosial">Sosial & Keamanan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group-setting">
+                            <label for="file_bukti"><i class="fas fa-paperclip"></i> Unggah Bukti (Foto/Video)</label>
+                            <input type="file" id="file_bukti" accept="image/*,video/*">
+                            <small style="color: #666;">Maksimal 5MB. Bukti sangat membantu proses verifikasi.</small>
+                        </div>
+
+                        <button type="submit" class="btn-save-settings"><i class="fas fa-paper-plane"></i> Kirim Keluhan</button>
+                    </form>
+                </div>
+            </section>
+            
+            <div id="successModal" class="modal-notif-custom hidden">
+                <div class="modal-notif-content success">
+                    <span class="close-btn-notif" onclick="closeSuccessModal()">&times;</span>
+                    <i class="fas fa-check-circle modal-icon"></i>
+                    <h2>Keluhan Berhasil Dikirim!</h2>
+                    <p id="modalKeluhanTitle">Keluhan Anda sedang kami proses.</p>
+                    <p>Terima kasih atas laporan Anda. Keluhan telah dicatat dengan ID **#RN25-007** dan akan segera diverifikasi.</p>
+                    <button class="btn btn-primary" onclick="redirectToHistory()">Lihat Riwayat</button>
+                </div>
+            </div>
+            </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script>
+        // JS untuk Form Pengajuan Keluhan dan Modal Notifikasi
+        
+        function submitKeluhan(event) {
+            // Mencegah form melakukan submit default (reload halaman)
+            event.preventDefault();
+            
+            const judul = document.getElementById('judul').value;
+            
+            // 1. Update Judul di Modal
+            document.getElementById('modalKeluhanTitle').textContent = `Keluhan: "${judul}"`;
+            
+            // 2. Tampilkan Modal Pop-up
+            document.getElementById('successModal').classList.remove('hidden');
+            
+            // 3. Reset Formulir (seperti keluhan sudah terkirim)
+            document.getElementById('formKeluhanBaru').reset();
+            
+            // Opsional: Gulir ke atas agar modal terlihat jelas
+            window.scrollTo(0, 0); 
+        }
+
+        function closeSuccessModal() {
+            // Menyembunyikan Modal Pop-up
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        function redirectToHistory() {
+            closeSuccessModal();
+            // Arahkan user ke halaman riwayat
+            window.location.href = 'user_riwayat.html'; 
+        }
+    </script>
+</body>
+</html>

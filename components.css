@@ -1,0 +1,185 @@
+/* ======================== */
+/* 2. POP-UP MODAL (Keren)  */
+/* ======================== */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparan overlay */
+    
+    /* Efek Blur pada Latar Belakang */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    padding-top: 50px;
+}
+
+.modal-content-custom {
+    background-color: white;
+    margin: 5% auto; 
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: var(--shadow-light);
+    position: relative;
+    animation: fadeInDown 0.5s;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    color: var(--maroon-dark);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.close-btn:hover, .close-btn:focus {
+    color: var(--maroon);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Pemilihan Peran (Role Selection) */
+.role-selection-wrapper {
+    text-align: center;
+}
+.role-selection-wrapper h2 {
+    color: var(--maroon);
+    margin-bottom: 5px;
+}
+.role-selection-wrapper p {
+    margin-bottom: 30px;
+    color: #666;
+}
+.role-buttons-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-role-card {
+    flex: 1;
+    padding: 25px 15px;
+    border: 2px solid var(--bone-white-dark);
+    background: var(--bone-white);
+    color: var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-role-card:hover {
+    background-color: var(--maroon);
+    color: white;
+    border-color: var(--maroon);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3);
+}
+
+.btn-role-card i {
+    margin-bottom: 10px;
+    color: var(--maroon);
+    transition: color 0.3s;
+}
+.btn-role-card:hover i {
+    color: white;
+}
+.btn-role-card h4 {
+    margin: 5px 0;
+}
+.btn-role-card p {
+    font-size: 0.85em;
+    margin: 0;
+}
+
+/* Form Login Style */
+.login-form {
+    padding: 10px;
+}
+.input-group-modern {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.input-group-modern label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--maroon-dark);
+}
+.input-group-modern input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid var(--bone-white-dark);
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+.input-group-modern input:focus {
+    border-color: var(--maroon);
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 0, 0.2);
+}
+.input-group-modern label i {
+    margin-right: 8px;
+    color: var(--maroon);
+}
+
+.btn-hero {
+    background-color: white;
+    color: var(--maroon);
+    font-size: 1.1em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-hero:hover {
+    background-color: var(--bone-white-dark);
+    transform: scale(1.05);
+}
+
+.btn-submit-modern {
+    width: 100%;
+    background-color: var(--maroon);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.btn-submit-modern:hover {
+    background-color: var(--maroon-dark);
+}
+
+.btn-back {
+    width: 100%;
+    background: none;
+    color: var(--maroon-dark);
+    border: 1px solid var(--bone-white-dark);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-back:hover {
+    background-color: var(--bone-white-dark);
+}
+
+.hidden {
+    display: none;
+}

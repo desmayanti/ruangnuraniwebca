@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Mengatasi - Ruang Nurani Admin</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/admin_mengatasi.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">Ruang Nurani Admin</div>
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_keluhan.html" class="nav-item"><i class="fas fa-exclamation-triangle"></i> Keluhan Rakyat</a>
+                <a href="admin_solusi.html" class="nav-item"><i class="fas fa-lightbulb"></i> Solusi</a>
+                <a href="admin_mengatasi.html" class="nav-item active"><i class="fas fa-cogs"></i> Cara Mengatasi</a>
+                <a href="admin_uneg_uneg.html" class="nav-item"><i class="fas fa-comments"></i> Isi Uneg-unegan</a>
+                <a href="admin_pengaturan.html" class="nav-item"><i class="fas fa-cog"></i> Pengaturan</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Prosedur Standar Operasi (SOP) Penanganan Keluhan</h2>
+                <button class="btn btn-primary btn-small" onclick="alert('Form tambah SOP baru muncul!')"><i class="fas fa-folder-plus"></i> Buat SOP Baru</button>
+            </header>
+
+            <section class="content-area">
+                
+                <h3>Panduan Penanganan Keluhan Infrastruktur Jalan Rusak</h3>
+                <p class="guide-intro">Prosedur ini harus diikuti untuk keluhan yang terkait dengan kerusakan fisik jalan, trotoar, atau jembatan.</p>
+
+                <div class="timeline-container">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="timeline-content">
+                            <h4>Langkah 1: Verifikasi Lokasi & Tingkat Kerusakan</h4>
+                            <p>Tim survei lapangan harus segera mendatangi lokasi dalam waktu **24 jam**. Dokumentasikan kerusakan (foto/video) dan tentukan kategori kerusakan (ringan, sedang, berat).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="timeline-content">
+                            <h4>Langkah 2: Alokasi Sumber Daya & Anggaran</h4>
+                            <p>Berdasarkan tingkat kerusakan, alokasikan tim perbaikan (PUPR) dan pastikan ketersediaan anggaran. Jika kerusakan berat, masukkan dalam agenda rapat prioritas mingguan.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-check-double"></i></div>
+                        <div class="timeline-content">
+                            <h4>Langkah 5: Audit Kualitas & Penutupan</h4>
+                            <p>Lakukan audit kualitas perbaikan. Jika sesuai SOP, ubah status keluhan menjadi **Selesai** dan arsipkan data teknis perbaikan.</p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <hr class="divider">
+                
+                <h3>Panduan Singkat: Keluhan Pelayanan Publik</h3>
+                <ul class="quick-guide-list">
+                    <li><i class="fas fa-angle-right"></i> **Verifikasi Petugas:** Identifikasi petugas yang dikeluhkan (nama, unit, waktu).</li>
+                    <li><i class="fas fa-angle-right"></i> **Mediasi:** Hubungi pelapor dan petugas untuk klarifikasi awal.</li>
+                    <li><i class="fas fa-angle-right"></i> **Tindakan Disiplin:** Jika terbukti bersalah, lakukan teguran lisan/tertulis.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

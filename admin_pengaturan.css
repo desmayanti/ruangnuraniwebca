@@ -1,0 +1,116 @@
+/* css/admin_pengaturan.css */
+
+/* ======================== */
+/* Gaya Form Pengaturan (Digunakan Admin dan User) */
+/* ======================== */
+
+.form-setting-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Shadow yang lebih lembut */
+}
+
+.form-setting-container h3 {
+    color: var(--maroon-dark);
+    border-bottom: 2px solid var(--bone-white-dark);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.input-group-setting {
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-left: 4px solid var(--maroon-light); /* Garis pembeda */
+    padding-left: 15px;
+}
+
+.input-group-setting label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #444; /* Sedikit lebih gelap */
+    display: flex;
+    align-items: center;
+    font-size: 1.05em;
+}
+
+.input-group-setting label i {
+    margin-right: 10px;
+    color: var(--maroon);
+}
+
+.input-group-setting input[type="text"],
+.input-group-setting input[type="email"],
+.input-group-setting input[type="password"],
+.input-group-setting select,
+.input-group-setting textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group-setting input:focus,
+.input-group-setting textarea:focus,
+.input-group-setting select:focus {
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+.setting-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-save-settings {
+    background-color: var(--maroon);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 50px; /* Tombol lebih elegan */
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-save-settings:hover {
+    background-color: var(--maroon-dark);
+    transform: translateY(-1px);
+}
+
+.btn-reset-settings {
+    background-color: #f0ad4e; /* Warna kuning/oren untuk reset/batal */
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-reset-settings:hover {
+    background-color: #d99a45;
+}
+
+/* Bagian Ganti Password (khusus di Pengaturan Admin/User) */
+.password-section {
+    margin-top: 40px;
+    border-top: 1px dashed #ccc;
+    padding-top: 25px;
+}
+
+.password-section h4 {
+    color: #cc3333;
+    margin-bottom: 20px;
+}

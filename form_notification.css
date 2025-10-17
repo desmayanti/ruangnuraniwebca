@@ -1,0 +1,69 @@
+/* css/form_notification.css - Gaya untuk Modal Pop-up Sukses */
+
+/* Modal Backdrop */
+.modal-notif-custom {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content (The Box) */
+.modal-notif-content {
+    background-color: #fefefe;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+    position: relative;
+}
+
+.modal-notif-content.success {
+    border-top: 5px solid var(--green-success);
+}
+
+.modal-icon {
+    font-size: 3.5em;
+    color: var(--green-success); 
+    margin-bottom: 15px;
+}
+
+.modal-notif-content h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.modal-notif-content p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.close-btn-notif {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

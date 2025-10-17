@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Solusi - Admin Ruang Nurani</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/admin_solusi.css"> <link rel="stylesheet" href="../css/form_notification.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-user-secret logo-icon"></i> Admin <span style="color:var(--red-alert);"> Anti Korupsi</span>
+            </div> 
+            
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_keluhan.html" class="nav-item"><i class="fas fa-exclamation-triangle"></i> Keluhan Rakyat</a>
+                <a href="admin_solusi.html" class="nav-item active"><i class="fas fa-lightbulb"></i> Solusi & Penanganan</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Manajemen Solusi & Penanganan</h2>
+                <p>Kelola daftar solusi dan tindakan penanganan yang telah ditetapkan.</p>
+                <button class="btn btn-primary" onclick="openSolutionModal('add')" style="margin-top: 15px;">
+                    <i class="fas fa-plus-circle"></i> Tambah Solusi Baru
+                </button>
+            </header>
+
+            <section class="content-area">
+                
+                <div class="solusi-filter-controls">
+                    <input type="text" id="searchSolusi" placeholder="Cari Judul Solusi atau Kategori..." onkeyup="filterSolusi()">
+                    <select id="filterSolusiKategori" onchange="filterSolusi()">
+                        <option value="all">Semua Kategori</option>
+                        <option value="Infrastruktur">Infrastruktur</option>
+                        <option value="Pelayanan">Pelayanan Publik</option>
+                        <option value="Lingkungan">Lingkungan</option>
+                        <option value="Sosial">Sosial & Keamanan</option>
+                    </select>
+                </div>
+
+                <div class="solusi-grid" id="solusiGrid">
+                    </div>
+
+                <div id="noSolusiResults" style="text-align: center; padding: 40px; color: #999; display: none;">
+                    <i class="fas fa-info-circle fa-4x" style="margin-bottom: 15px;"></i>
+                    <p>Tidak ada solusi yang cocok dengan filter Anda.</p>
+                </div>
+
+            </section>
+            
+            <div id="solusiModal" class="modal-notif-custom hidden">
+                <div class="modal-notif-content">
+                    <span class="close-btn-notif" onclick="closeSolusiModal()">&times;</span>
+                    <h2 id="modalTitle">Tambah Solusi Baru</h2>
+                    <form id="solusiForm">
+                        <input type="hidden" id="solusiId">
+                        
+                        <div class="input-group-setting">
+                            <label for="judulSolusi"><i class="fas fa-heading"></i> Judul Solusi</label>
+                            <input type="text" id="judulSolusi" placeholder="Contoh: Perbaikan Jalan Rusak" required>
+                        </div>
+                        
+                        <div class="input-group-setting">
+                            <label for="deskripsiSolusi"><i class="fas fa-align-left"></i> Deskripsi/Langkah Solusi</label>
+                            <textarea id="deskripsiSolusi" rows="6" placeholder="Jelaskan langkah-langkah atau detail solusi ini." required></textarea>
+                        </div>
+                        
+                        <div class="input-group-setting">
+                            <label for="kategoriSolusi"><i class="fas fa-tags"></i> Kategori Keluhan</label>
+                            <select id="kategoriSolusi" required>
+                                <option value="" disabled selected>Pilih Kategori</option>
+                                <option value="Infrastruktur">Infrastruktur</option>
+                                <option value="Pelayanan">Pelayanan Publik</option>
+                                <option value="Lingkungan">Lingkungan</option>
+                                <option value="Sosial">Sosial & Keamanan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group-setting">
+                            <label for="picSolusi"><i class="fas fa-user-tie"></i> Penanggung Jawab</label>
+                            <input type="text" id="picSolusi" placeholder="Contoh: Dinas Pekerjaan Umum" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="margin-top: 15px;"><i class="fas fa-save"></i> Simpan Solusi</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/admin_solusi.js"></script> 
+</body>
+</html>

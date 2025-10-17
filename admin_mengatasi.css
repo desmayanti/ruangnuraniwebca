@@ -1,0 +1,139 @@
+/* css/admin_mengatasi.css */
+
+/* ======================== */
+/* Gaya Khusus Halaman Cara Mengatasi (Timeline) */
+/* ======================== */
+
+.guide-intro {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+    border-left: 3px solid var(--maroon);
+    padding-left: 15px;
+}
+
+.timeline-container {
+    position: relative;
+    padding: 20px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Garis vertikal utama timeline (Maroon) */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--maroon);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+/* Item Kiri (Default) */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    transform: translateX(-10px);
+}
+
+/* Item Kanan (Untuk variasi visual) */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    transform: translateX(10px);
+}
+
+/* Icon Timeline (Titik Maroon) */
+.timeline-icon {
+    height: 40px;
+    width: 40px;
+    background-color: var(--maroon);
+    color: white;
+    position: absolute;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 5px var(--bone-white-dark);
+}
+
+/* Penempatan Icon */
+.timeline-item:nth-child(odd) .timeline-icon {
+    right: -20px;
+}
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -20px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content h4 {
+    color: var(--maroon-dark);
+    margin-top: 0;
+    border-bottom: 1px solid var(--bone-white-dark);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Quick Guide List */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 40px 0;
+}
+
+.quick-guide-list {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-guide-list li {
+    background: var(--bone-white);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid var(--maroon-dark);
+    font-weight: 500;
+}
+
+.quick-guide-list li i {
+    color: var(--maroon);
+    margin-right: 10px;
+}
+
+/* Responsif untuk layar kecil (agar tidak ada timeline terbagi) */
+@media screen and (max-width: 600px) {
+    .timeline-container::after {
+        left: 31px; 
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        left: 0 !important;
+        transform: none !important;
+    }
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    .timeline-icon {
+        left: 15px !important;
+    }
+}
